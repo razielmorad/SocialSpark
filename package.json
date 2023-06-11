@@ -1,0 +1,6 @@
+{
+  "homepage": "https://razielmorad.github.io/SocialSpark",
+  "dependencies": {
+    "react-particle-backgrounds": "^1.0.4"
+  }
+}

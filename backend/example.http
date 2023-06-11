@@ -1,0 +1,62 @@
+ @local = http://localhost:3001
+ @token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDU2YmVlNzAwYWI2MTYyMGE0ODdhNjciLCJhZG1pbiI6ZmFsc2UsImlhdCI6MTY4NjE3Mjc4NH0.rkqmXtCHvosXTQK_4oldgTR55ycJIzev9jjKlwWkPBg
+ @id = 6456bee700ab61620a487a67
+### create a new user
+post {{local}}/user/new
+Content-Type: application/json
+
+
+{
+    "name" : "raziel",
+    "email":"raazie12l@gmail.com",
+    "admin" : false,
+    "password" : "0123456xX@"
+ 
+}
+
+### log in and get a token
+post {{local}}/auth/
+Content-Type: application/json
+
+{
+     "email":"razielmorad96@gmail.com",
+       "password" : "0123456xX!"
+}
+
+### get my user
+GET {{local}}/user/myUser
+x-auth-token : {{token}}
+### get a user
+GET {{local}}/user/getUser
+x-auth-token : {{token}}
+
+
+
+
+### post
+POST  {{local}}/post
+x-auth-token :{{token}}
+Content-Type: application/json
+
+{
+  "content" : "hsajkhsass",
+  "video" : "null",
+  "image" : "dsvvvvvvvvx",
+  "tagged" : ""
+
+}
+### all posts
+GET {{local}}/post/allPosts
+x-auth-token : {{token}}
+###
+PUT {{local}}/post/comments/64771a2ca6759c0859d7f2f0
+x-auth-token : {{token}}
+Content-Type: application/json
+
+{
+  "comment" :"hellooooooooooo"
+}
+###
+
+GET  {{local}}/post/likedPosts/6456bee700ab61620a487a67
+x-auth-token : {{token}}

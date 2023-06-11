@@ -1,0 +1,92 @@
+.App {
+  text-align: center;
+}
+.gold {
+  color: #edc967;
+}
+.input-wrapper {
+  position: relative;
+}
+.input-wrapper input {
+  padding-right: 30px;
+}
+.input-wrapper button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.small-input {
+  width: 270px;
+  margin: auto;
+  margin-bottom: 5px;
+}
+.btn-line {
+  text-decoration: none;
+  position: relative;
+}
+
+.btn-line::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(17, 17, 17);
+}
+
+.btn-line span {
+  padding-bottom: 0.1em;
+}
+
+.smaller-input {
+  font-size: 14px;
+}
+
+.icon-container {
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  color: #0f0d0d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 200px;
+  cursor: pointer;
+}
+
+.icon-container i {
+  font-size: 50px;
+}
+
+.icon-container span {
+  margin-top: 10px;
+}
+
+.circle-profile {
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.rounded-8 {
+  border-radius: 15%;
+}
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 280px;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
