@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/SocialSpark/static/css/main.4b16699d.css",
-    "main.js": "/SocialSpark/static/js/main.bc22a433.js",
+    "main.css": "/SocialSpark/static/css/main.c5698efd.css",
+    "main.js": "/SocialSpark/static/js/main.42988a31.js",
     "static/js/787.cda612ba.chunk.js": "/SocialSpark/static/js/787.cda612ba.chunk.js",
     "static/media/search-2951638_1280.jpg": "/SocialSpark/static/media/search-2951638_1280.c04b06b1b574be1f8ea4.jpg",
     "static/media/coffee-1869772_1280.jpg": "/SocialSpark/static/media/coffee-1869772_1280.eb109c3039cf3ce5f680.jpg",
@@ -16,12 +16,12 @@
     "static/media/sign-up.png": "/SocialSpark/static/media/sign-up.496836e062428419f312.png",
     "static/media/sign-in.png": "/SocialSpark/static/media/sign-in.d8dc9f4fe07534dac859.png",
     "index.html": "/SocialSpark/index.html",
-    "main.4b16699d.css.map": "/SocialSpark/static/css/main.4b16699d.css.map",
-    "main.bc22a433.js.map": "/SocialSpark/static/js/main.bc22a433.js.map",
+    "main.c5698efd.css.map": "/SocialSpark/static/css/main.c5698efd.css.map",
+    "main.42988a31.js.map": "/SocialSpark/static/js/main.42988a31.js.map",
     "787.cda612ba.chunk.js.map": "/SocialSpark/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4b16699d.css",
-    "static/js/main.bc22a433.js"
+    "static/css/main.c5698efd.css",
+    "static/js/main.42988a31.js"
   ]
 }
