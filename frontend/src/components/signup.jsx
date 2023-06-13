@@ -69,114 +69,127 @@ const SignUp = () => {
   });
   return (
     <>
-    <div className="container">  <div className="d-flex flex-column">
-        <header className="mb-auto text-center">
-          <div>
-          <nav className="nav  justify-content-between float-md-end">
-              <Link
-                to={"/ulHome"}
-                className="nav-link fw-bold py-1 px-0 mx-3 text-black"
+      <div className="bg-dark">
+        <div className="container">
+          {" "}
+          <div className="d-flex flex-column">
+            <header className="mb-auto text-center">
+              <div>
+                <nav className="nav  justify-content-between float-md-end">
+                  <Link
+                    to={"/ulHome"}
+                    className="nav-link fw-bold py-1 px-0 mx-3 text-black"
+                  >
+                    Home
+                  </Link>
+                  <Link
+                    to={"/ulAbout"}
+                    className="nav-link fw-bold py-1 px-0 mx-3 text-black"
+                  >
+                    About
+                  </Link>
+                  <Link
+                    to={"/signup"}
+                    className="nav-link fw-bold py-1 px-0 mx-3 text-black"
+                  >
+                    Sign Up
+                  </Link>
+                  <Link
+                    to={"/signin"}
+                    className="nav-link fw-bold py-1 px-0 mx-3 text-black"
+                  >
+                    Sign In
+                  </Link>
+                </nav>
+              </div>
+            </header>
+            <div className="row mt-4">
+              <form
+                onSubmit={form.handleSubmit}
+                className="mt-2 p-5 form-floating form d-grid gap-3 col-lg-5 mx-auto col-sm-8"
               >
-                Home
-              </Link>
-              <Link
-                to={"/ulAbout"}
-                className="nav-link fw-bold py-1 px-0 mx-3 text-black"
-              >
-                About
-              </Link>
-              <Link
-                to={"/signup"}
-                className="nav-link fw-bold py-1 px-0 mx-3 text-black"
-              >
-               Sign Up
-              </Link>
-              <Link
-                to={"/signin"}
-                className="nav-link fw-bold py-1 px-0 mx-3 text-black"
-              >
-               Sign In
-              </Link>
-            </nav>
-          </div>
-        </header>
+                <img
+                  className="mx-auto"
+                  src={signupicon}
+                  alt="sign up logo"
+                  width={"120px"}
+                  height={"120px"}
+                />
 
-        <form
-          onSubmit={form.handleSubmit}
-          className="mt-2 p-5 form-floating form d-grid gap-3 col-lg-5 mx-auto col-sm-8"
-        >
-          <img
-            className="mx-auto"
-            src={signupicon}
-            alt="sign up logo"
-            width={"120px"}
-            height={"120px"}
-          />
-       
-          {error && (
-            <div className="alert-danger alert text-center">{error}</div>
-          )}
-          <FormInput
-            name={"firstName"}
-            type="name"
-            label={"First Name"}
-            error={form.touched.name && form.errors.name}
-            {...form.getFieldProps("firstName")}
-          />
-          <FormInput
-            name={"lastName"}
-            type="name"
-            label={"Last Name"}
-            error={form.touched.name && form.errors.name}
-            {...form.getFieldProps("lastName")}
-          />
-
-          <FormInput
-            name={"email"}
-            type="email"
-            label={"Email Address"}
-            error={form.touched.email && form.errors.email}
-            {...form.getFieldProps("email")}
-          ></FormInput>
-          <div className="input-wrapper">
-            <FormInput
-              name="password"
-              type={showPassword ? "text" : "password"}
-              label={"password"}
-              error={form.touched.password && form.errors.password}
-              {...form.getFieldProps("password")}
-            />
-            {!form.touched.password ? null : (
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-              >
-                {!showPassword ? (
-                  <i className="bi bi-eye-slash"></i>
-                ) : (
-                  <i className="bi bi-eye"></i>
+                {error && (
+                  <div className="alert-danger alert text-center">{error}</div>
                 )}
-              </button>
-            )}
-          </div>
-          <FormInput
-            name="rePassword"
-            type="password"
-            label={"confirm password"}
-            error={form.touched.rePassword && form.errors.rePassword}
-            {...form.getFieldProps("rePassword")}
-          />
+                <FormInput
+                  name={"firstName"}
+                  type="name"
+                  label={"First Name"}
+                  error={form.touched.name && form.errors.name}
+                  {...form.getFieldProps("firstName")}
+                />
+                <FormInput
+                  name={"lastName"}
+                  type="name"
+                  label={"Last Name"}
+                  error={form.touched.name && form.errors.name}
+                  {...form.getFieldProps("lastName")}
+                />
 
-          <button className=" btn btn-lg text-light btn-outline-secondary" type="submit">
-            Sign Up
-          </button>
-          <span className=" text-light">already have an account?</span>
-          <button onClick={() => navigate("/signin")} className="btn btn-lg ">
-            <span className="text-light btn btn-outline-secondary">Sign in here</span>
-          </button>
-        </form>
-      </div></div>
-    
+                <FormInput
+                  name={"email"}
+                  type="email"
+                  label={"Email Address"}
+                  error={form.touched.email && form.errors.email}
+                  {...form.getFieldProps("email")}
+                ></FormInput>
+                <div className="input-wrapper">
+                  <FormInput
+                    name="password"
+                    type={showPassword ? "text" : "password"}
+                    label={"password"}
+                    error={form.touched.password && form.errors.password}
+                    {...form.getFieldProps("password")}
+                  />
+                  {!form.touched.password ? null : (
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {!showPassword ? (
+                        <i className="bi bi-eye-slash"></i>
+                      ) : (
+                        <i className="bi bi-eye"></i>
+                      )}
+                    </button>
+                  )}
+                </div>
+                <FormInput
+                  name="rePassword"
+                  type="password"
+                  label={"confirm password"}
+                  error={form.touched.rePassword && form.errors.rePassword}
+                  {...form.getFieldProps("rePassword")}
+                />
+
+                <button
+                  className=" btn btn-lg text-light btn-outline-secondary"
+                  type="submit"
+                >
+                  Sign Up
+                </button>
+                <span className=" text-light">already have an account?</span>
+                <button
+                  onClick={() => navigate("/signin")}
+                  className="btn btn-lg "
+                >
+                  <span className="text-light btn btn-outline-secondary">
+                    Sign in here
+                  </span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 };

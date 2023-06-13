@@ -28,6 +28,7 @@ const Post = ({
   };
   const form = useFormik({
     validateOnBlur: false,
+    validateOnMount: false,
     initialValues: {
       comment: "",
     },
@@ -35,7 +36,6 @@ const Post = ({
     onSubmit: async (values, { resetForm }) => {
       try {
         const response = await postComment(_id, values);
-        console.log(response.data);
         setPostComments(response.data.comments);
         resetForm();
       } catch ({ response }) {
@@ -85,7 +85,9 @@ const Post = ({
                 </div>
                 <div className="d-flex flex-column align-items-end">
                   <Link
-                    to={user_id === user._id ? "/myProfile" : `/user/${user_id}`}
+                    to={
+                      user_id === user._id ? "/myProfile" : `/user/${user_id}`
+                    }
                     className="fw-bolder text-black"
                   >{`${firstName} ${lastName}`}</Link>{" "}
                   <TimePassed created_at={created_at} />
@@ -136,8 +138,12 @@ const Post = ({
                       <textarea
                         className="form-control bg-body-secondary border-dark"
                         placeholder="Leave a comment here"
-                        style={{ height: "30px", resize: "none", overflow: "hidden" }}
-                        name="comment" 
+                        style={{
+                          height: "30px",
+                          resize: "none",
+                          overflow: "hidden",
+                        }}
+                        name="comment"
                         value={form.values.comment}
                         onChange={form.handleChange}
                         onBlur={form.handleBlur}
@@ -149,7 +155,10 @@ const Post = ({
                     </div>{" "}
                     {form.errors.comment && <span>{form.errors.comment}</span>}
                   </form>
-                  <Comment comments={postComments} setComments={setPostComments} />
+                  <Comment
+                    comments={postComments}
+                    setComments={setPostComments}
+                  />
                 </div>
               )}
             </div>

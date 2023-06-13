@@ -21,13 +21,13 @@ const CreatePost = () => {
     initialValues: {
       postContent: "",
       image: "",
-      taggedUsers: "",
+    
     },
     validate: formikValidateUsingJoi({
       postContent: Joi.string().required(),
       image: Joi.any().allow(""),
       video: Joi.any().allow(""),
-      taggedUsers: Joi.string().allow(""),
+ 
     }),
     async onSubmit(values) {
       try {
@@ -66,22 +66,22 @@ const CreatePost = () => {
         />
         <span style={{ color: "red" }}>{form.errors.postContent}</span>
       </div>
-      <div className="">
-        {" "}
-        <div className="d-flex  ">
-          {" "}
-          <button className="btn btn-primary" type="submit">
+      <div className="d-flex">
+        <div className="flex-grow-1">
+          <button className="btn m-0 btn-outline-dark w-100" type="submit">
             Post
           </button>
-          <ImageUpload
-            image={base64Image}
-            setImage={setBase64Image}
-            label={"image"}
-            error={form.errors.image}
-            {...form.getFieldProps("image")}
-          />
         </div>
-      </div>
+          <div className="flex-shrink-0">
+            <ImageUpload
+              image={base64Image}
+              setImage={setBase64Image}
+              label={"image"}
+              error={form.errors.image}
+              {...form.getFieldProps("image")}
+            />
+          </div>
+        </div>
     </form>
   );
 };

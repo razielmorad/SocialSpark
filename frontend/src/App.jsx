@@ -24,13 +24,15 @@ import { useAuth } from "./components/context/auth.context";
 function App() {
   const location = useLocation();
   const { user } = useAuth();
-  const signUpAndIn = ["/signup", "/signin", "/ulHome","/ulAbout"].includes(
+  const signUpAndIn = ["/signup", "/signin", "/ulHome", "/ulAbout"].includes(
     location.pathname
   );
-  const includeHome = ["/"].includes(location.pathname);
+
 
   return (
-    <div className="App d-flex flex-column min-vh-100 bg-secondary bg-opacity-25">
+    <>
+    
+     <div className="App d-flex flex-column min-vh-100 bg-secondary bg-opacity-25">
       <ToastContainer />
       {!signUpAndIn && (
         <header>
@@ -38,7 +40,7 @@ function App() {
         </header>
       )}
 
-      <main className="container flex-fill">
+  
         <Routes>
           <Route
             element={
@@ -46,8 +48,6 @@ function App() {
                 <>
                   <Home />
                 </>
-
-                {!includeHome && <Home />}
               </ProtectedRoute>
             }
             path={"/"}
@@ -55,9 +55,9 @@ function App() {
 
           <Route element={<About />} path={"/about"} />
           <Route element={<Favorites />} path={"/likedPosts"} />
-         
+
           <Route element={<SignOut />} path={"/signout"} />
-          <Route element={<SignOut />} path="/signout" />
+
           <Route element={<ContactPage />} path="/contactUs" />
           <Route
             path="/user/:id"
@@ -82,24 +82,22 @@ function App() {
               </ProtectedRoute>
             }
             path="/myProfile"
-          />
-        </Routes>
-      </main>
-      <div className="bg-dark">
-        <Routes>
-        <Route element={<LogIn />} path={"/signin"} />
+          /> 
+           <Route element={<LogIn />} path={"/signin"} />
           <Route element={<SignUp />} path={"/signup"} />
           <Route element={<UnLoggedHome />} path="/ulHome" />
-          <Route element={<UlAbout/>} path="/ulAbout" />
+          <Route element={<UlAbout />} path="/ulAbout" />
         </Routes>
-      </div>
+     
 
-      {!signUpAndIn && !includeHome && (
+      {!signUpAndIn && (
         <footer>
           <Footer></Footer>
         </footer>
       )}
     </div>
+    </>
+   
   );
 }
 
